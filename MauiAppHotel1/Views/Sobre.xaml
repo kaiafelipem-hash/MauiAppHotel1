@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MauiAppHotel1.Views.Sobre"
+    Title="Sobre"
+    BackgroundColor="#F2F5F7">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="25"
+            Spacing="20"
+            VerticalOptions="Center">
+
+            <Label
+                Text="🏨"
+                FontSize="65"
+                HorizontalOptions="Center"/>
+
+            <Label
+                Text="APP HOTEL"
+                FontSize="30"
+                FontAttributes="Bold"
+                TextColor="#176B57"
+                HorizontalOptions="Center"/>
+
+            <Label
+                Text="Sobre o Aplicativo"
+                FontSize="21"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                TextColor="#333333"/>
+
+            <Frame
+                BackgroundColor="White"
+                CornerRadius="15"
+                Padding="20"
+                HasShadow="True">
+
+                <VerticalStackLayout Spacing="15">
+
+                    <Label
+                        Text="Desenvolvedor"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        TextColor="#176B57"/>
+
+                    <Label
+                        Text="Kaiã Felipe Maciel"
+                        FontSize="18"
+                        TextColor="#333333"/>
+
+                    <Label
+                        Text="Ano de desenvolvimento"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        TextColor="#176B57"/>
+
+                    <Label
+                        Text="2026"
+                        FontSize="18"
+                        TextColor="#333333"/>
+
+                    <Label
+                        Text="Descrição"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        TextColor="#176B57"/>
+
+                    <Label
+                        Text="Aplicativo desenvolvido em .NET MAUI para praticar a criação de interfaces gráficas e funcionalidades de um sistema de hospedagem."
+                        FontSize="15"
+                        TextColor="#444444"
+                        LineBreakMode="WordWrap"/>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label
+                Text="Desenvolvido com .NET MAUI"
+                FontSize="13"
+                TextColor="Gray"
+                HorizontalOptions="Center"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
