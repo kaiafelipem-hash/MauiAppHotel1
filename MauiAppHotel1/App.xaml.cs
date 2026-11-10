@@ -10,6 +10,8 @@ namespace MauiAppHotel1
             MainPage = new NavigationPage(new Views.HospedagemContratada());
         }
 
+      
+
         protected override Window CreateWindow(IActivationState? activationState)
         {
             var window = base.CreateWindow(activationState);

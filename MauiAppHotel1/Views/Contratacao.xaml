@@ -2,11 +2,89 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppHotel1.Views.NewPage1"
-             Title="NewPage1">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Agenda 14 - Checkout"
+             BackgroundColor="#F4F7F6">
+    <!-- Fundo em tom pastel clean -->
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="20">
+
+            <!-- Novo Cabeçalho Estilizado (Diferente da Agenda 13) -->
+            <Frame BackgroundColor="#1E88E5" CornerRadius="15" Padding="15" HasShadow="True">
+                <VerticalStackLayout Spacing="5" HorizontalOptions="Center">
+                    <Label Text="✨ Resort &amp; Hotel Premium" 
+                           FontSize="24" 
+                           FontAttributes="Bold" 
+                           TextColor="White" 
+                           HorizontalOptions="Center" />
+                    <Label Text="Módulo de Reserva Atualizado - Agenda 14" 
+                           FontSize="13" 
+                           TextColor="#E3F2FD" 
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Seção de Seleção com Borda Colorida -->
+            <Label Text="Configurações da Hospedagem" FontAttributes="Bold" FontSize="16" TextColor="#1565C0" Margin="0,5,0,0"/>
+
+            <Frame BorderColor="#1E88E5" BackgroundColor="White" CornerRadius="10" Padding="15">
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="Escolha o Tipo de Quarto:" FontAttributes="Bold" TextColor="#37474F"/>
+                    <Picker x:Name="pck_suite" Title="Toque para selecionar..." TitleColor="#90A4AE">
+                        <Picker.Items>
+                            <x:String>Suíte Standard (R$ 150,00/dia)</x:String>
+                            <x:String>Suíte Master (R$ 250,00/dia)</x:String>
+                            <x:String>Suíte Premium Luxury (R$ 450,00/dia)</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Grid de Hóspedes Customizado -->
+            <Frame BackgroundColor="White" HasShadow="False" BorderColor="#CFD8DC" Padding="15" CornerRadius="10">
+                <Grid ColumnDefinitions="*, *" RowSpacing="10" ColumnSpacing="20">
+                    <VerticalStackLayout Grid.Column="0">
+                        <Label Text="👥 Adultos" FontAttributes="Bold" TextColor="#37474F" Margin="0,0,0,5"/>
+                        <Stepper x:Name="stp_adultos" Minimum="1" Maximum="5" Increment="1"/>
+                        <Label x:Name="lbl_adultos" Text="1" FontSize="15" HorizontalOptions="Center" TextColor="#1565C0" FontAttributes="Bold" Margin="0,5,0,0"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Column="1">
+                        <Label Text="🧸 Crianças" FontAttributes="Bold" TextColor="#37474F" Margin="0,0,0,5"/>
+                        <Stepper x:Name="stp_criancas" Minimum="0" Maximum="5" Increment="1"/>
+                        <Label x:Name="lbl_criancas" Text="0" FontSize="15" HorizontalOptions="Center" TextColor="#1565C0" FontAttributes="Bold" Margin="0,5,0,0"/>
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+
+            <!-- Datas -->
+            <Label Text="Período da Estadia" FontAttributes="Bold" FontSize="16" TextColor="#1565C0"/>
+            <Frame BackgroundColor="White" BorderColor="#CFD8DC" Padding="15" CornerRadius="10">
+                <Grid ColumnDefinitions="*, *" ColumnSpacing="15">
+                    <VerticalStackLayout Grid.Column="0">
+                        <Label Text="🗓️ Check-in" FontSize="12" TextColor="#546E7A" Margin="0,0,0,5"/>
+                        <DatePicker x:Name="dtp_checkin" Format="dd/MM/yyyy"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Column="1">
+                        <Label Text="🗓️ Check-out" FontSize="12" TextColor="#546E7A" Margin="0,0,0,5"/>
+                        <DatePicker x:Name="dtp_checkout" Format="dd/MM/yyyy"/>
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+
+            <!-- Botão de Ação Totalmente Modificado (Nova Cor da Agenda 14) -->
+            <Button x:Name="btn_avancar" 
+                    Text="Calcular e Avançar ➔" 
+                    BackgroundColor="#2E7D32" 
+                TextColor="White" 
+                    FontAttributes="Bold" 
+                    FontSize="16"
+                    CornerRadius="12" 
+                    HeightRequest="55" 
+                    Margin="0,15,0,0"
+                    Clicked="btn_avancar_Clicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

@@ -7,6 +7,7 @@ public partial class HospedagemContratada : ContentPage
     {
         InitializeComponent();
     }
+    
 
     private async void BtnSobre_Clicked(object sender, EventArgs e)
     {
